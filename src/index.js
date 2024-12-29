@@ -1,17 +1,15 @@
 import express from "express";
 import cors from "cors";
+import router from "./routes.js";
 
 const app = express(); //Levantar o servidor
 
 app.use(cors());
 
-//Criando a Rota.
-app.get("/doctors", (req, res) => {
-    res.status(200).send("Aqui vamos listar os médicos.");
-})
+app.use(router);
+
 
 app.listen(3001, () => {
     console.log("Servidor rodando na porta 3001...")
 })
 
-//00:43
